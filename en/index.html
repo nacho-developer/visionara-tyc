@@ -16,6 +16,7 @@
     <link rel="alternate" hreflang="es" href="https://nacho-developer.github.io/visionara-tyc/">
     <link rel="alternate" hreflang="en" href="https://nacho-developer.github.io/visionara-tyc/en/">
     <link rel="alternate" hreflang="x-default" href="https://nacho-developer.github.io/visionara-tyc/">
+    <script src="../assets/lang.js"></script>
     <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -37,8 +38,8 @@
             </div>
             <div class="nav-right">
                 <div class="lang-switch" aria-label="Language">
-                    <a href="../" hreflang="es">ES</a>
-                    <a href="./" hreflang="en" aria-current="true">EN</a>
+                    <a href="../?lang=es" hreflang="es">ES</a>
+                    <a href="./?lang=en" hreflang="en" aria-current="true">EN</a>
                 </div>
                 <a href="#download" class="nav-cta">Download</a>
             </div>
@@ -70,23 +71,12 @@
                 </div>
             </div>
 
-            <div class="phone-wrap" aria-hidden="true">
+            <div class="phone-wrap">
                 <div class="phone">
-                    <div class="screen">
-                        <div class="screen-title">Good morning ✨</div>
-                        <div class="screen-h">My 2027 vision</div>
-                        <div class="board">
-                            <div class="tile tall t1">Travel to Japan</div>
-                            <div class="tile t2">Run a 10K</div>
-                            <div class="tile t3">My own business</div>
-                            <div class="tile t5">“I deserve every good thing coming my way”</div>
-                            <div class="tile t4">Read 24 books</div>
-                        </div>
-                        <div class="streak"><span>Journal streak</span><b>🔥 21 days</b></div>
-                    </div>
+                    <div class="screen"><img src="../assets/screens/en-canvas.jpg" alt="Visionara vision board editor" width="552" height="1200" fetchpriority="high"></div>
                 </div>
-                <div class="float-card fc1"><div class="k">Goal: savings</div><strong>72% complete</strong></div>
-                <div class="float-card fc2"><div class="k">Today's mood</div><strong>😊 Grateful</strong></div>
+                <div class="float-card fc1" aria-hidden="true"><div class="k">Current streak</div><strong>🔥 18 days</strong></div>
+                <div class="float-card fc2" aria-hidden="true"><div class="k">Today's mood</div><strong>😊 Happy</strong></div>
             </div>
         </div>
     </header>
@@ -131,6 +121,54 @@
                 </div>
             </div>
             <p class="disclaimer">Visionara is a wellbeing tool and does not replace professional help.</p>
+        </div>
+    </section>
+
+    <section id="screens">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="eyebrow">Inside the app</div>
+                <h2 class="serif">This is Visionara</h2>
+                <p>Real screens from the app.</p>
+            </div>
+        </div>
+        <div class="gallery-wrap reveal">
+            <div class="gallery" aria-label="Visionara screen gallery" tabindex="0">
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-home.jpg" alt="Your day at a glance" width="552" height="1200" loading="lazy"></div>
+                    <h3>Your day at a glance</h3>
+                    <p>Your vision, your mood and your lists on one screen.</p>
+                </figure>
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-page.jpg" alt="From board to goals" width="552" height="1200" loading="lazy"></div>
+                    <h3>From board to goals</h3>
+                    <p>Every vision board becomes goals and habits.</p>
+                </figure>
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-chat.jpg" alt="AI psychologist" width="552" height="1200" loading="lazy"></div>
+                    <h3>AI psychologist</h3>
+                    <p>Talk about how you feel and get personal support.</p>
+                </figure>
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-journal.jpg" alt="Daily journal" width="552" height="1200" loading="lazy"></div>
+                    <h3>Daily journal</h3>
+                    <p>Write or record your day and track your mood.</p>
+                </figure>
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-progress.jpg" alt="Your progress" width="552" height="1200" loading="lazy"></div>
+                    <h3>Your progress</h3>
+                    <p>Levels, streaks and a calendar of your mood.</p>
+                </figure>
+                <figure class="shot">
+                    <div class="frame"><img src="../assets/screens/en-boards.jpg" alt="A board for every dream" width="552" height="1200" loading="lazy"></div>
+                    <h3>A board for every dream</h3>
+                    <p>All your vision boards in one place.</p>
+                </figure>
+            </div>
+            <div class="gallery-nav">
+                <button type="button" data-dir="-1" aria-label="Previous">←</button>
+                <button type="button" data-dir="1" aria-label="Next">→</button>
+            </div>
         </div>
     </section>
 

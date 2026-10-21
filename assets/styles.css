@@ -111,24 +111,13 @@ h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.04; letter-spacing: -
 @keyframes float { 50% { transform: rotate(-4deg) translateY(-14px); } }
 .screen {
     height: 100%; border-radius: 36px; overflow: hidden; position: relative;
-    background: linear-gradient(180deg, #1c1740, #120f2a); padding: 44px 16px 16px;
+    background: #fff;
 }
+.screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .screen::before {
     content: ""; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-    width: 86px; height: 24px; border-radius: 20px; background: #000;
+    width: 86px; height: 24px; border-radius: 20px; background: #000; z-index: 1;
 }
-.screen-title { font-size: .7rem; color: var(--muted); }
-.screen-h { font-family: 'Fraunces', serif; font-size: 1.25rem; margin-bottom: 12px; }
-.board { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 74px; gap: 8px; }
-.tile { border-radius: 14px; padding: 9px; font-size: .64rem; font-weight: 600; display: flex; align-items: flex-end; color: #fff; }
-.tile.tall { grid-row: span 2; }
-.t1 { background: linear-gradient(160deg, #f59e0b, #ec4899); }
-.t2 { background: linear-gradient(160deg, #06b6d4, #3b82f6); }
-.t3 { background: linear-gradient(160deg, #a78bfa, #6d28d9); }
-.t4 { background: linear-gradient(160deg, #34d399, #0d9488); }
-.t5 { background: rgba(255, 255, 255, .06); border: 1px dashed rgba(255, 255, 255, .2); font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: .72rem; align-items: center; text-align: center; justify-content: center; }
-.streak { margin-top: 12px; border-radius: 14px; padding: 10px 12px; background: rgba(255, 255, 255, .06); display: flex; justify-content: space-between; align-items: center; font-size: .7rem; }
-.streak b { color: var(--gold); font-size: .9rem; }
 .float-card {
     position: absolute; background: rgba(28, 23, 64, .85); backdrop-filter: blur(10px);
     border: 1px solid var(--card-border); border-radius: 16px; padding: 12px 14px;
@@ -203,6 +192,34 @@ footer a:hover { color: var(--text); }
 
 .disclaimer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 28px; opacity: .8; }
 
+/* Galería de pantallas */
+.gallery-wrap { position: relative; max-width: 1280px; margin: 0 auto; }
+.gallery {
+    display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 12px 20px 36px; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.gallery::-webkit-scrollbar { display: none; }
+.shot { flex: 0 0 236px; scroll-snap-align: center; text-align: center; }
+.shot .frame {
+    border-radius: 38px; padding: 8px; margin-bottom: 18px;
+    background: linear-gradient(160deg, #2a2550, #0f0c22);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .45), inset 0 0 0 1.5px rgba(255, 255, 255, .12);
+    transition: transform .3s;
+}
+.shot:hover .frame { transform: translateY(-6px); }
+.shot img { width: 100%; height: auto; aspect-ratio: 1320 / 2868; border-radius: 30px; background: #fff; }
+.shot h3 { font-size: 1rem; margin-bottom: 4px; }
+.shot p { color: var(--muted); font-size: .88rem; }
+.gallery-nav { display: flex; justify-content: center; gap: 12px; }
+.gallery-nav button {
+    width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;
+    background: var(--card); border: 1px solid var(--card-border); color: var(--text);
+    transition: background .2s;
+}
+.gallery-nav button:hover { background: rgba(255, 255, 255, .12); }
+
 /* Animación de entrada */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
@@ -224,6 +241,7 @@ footer a:hover { color: var(--text); }
     section { padding: 64px 0; }
     .store-btn { width: 100%; justify-content: center; }
     .phone { width: 250px; }
+    .shot { flex-basis: 210px; }
     .fc1 { left: 0; } .fc2 { right: 0; }
     .cta { padding: 52px 20px; }
     footer .container { flex-direction: column; text-align: center; }
